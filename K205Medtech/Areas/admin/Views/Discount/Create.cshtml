@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <form method="post">
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <p>Title</p>
+                        <input class="form-control mb-2" type="text" name="Title" />
+                        <p>DiscountOFF</p>
+                        <input class="form-control mb-2" type="text" name="DiscountOFF" />
+                        <p>Photo</p>
+                        <input class="form-control mb-2" type="text" name="PhotoURL" />
+                    </div>
+
+                </div>
+
+                <script>
+                    ClassicEditor
+                            .create( document.querySelector('#editor-1') )
+                </script>
+                <div class="card p-3 mt-3">
+                <input class="btn btn-primary btn-sm" type="submit" value="Create" />
+                </div>
+                <div class="card p-3 mt-3">
+                <a class="btn btn-primary btn-sm" href="/admin/discount">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

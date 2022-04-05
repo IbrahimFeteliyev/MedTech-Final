@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Principle>
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary"><a id="@(ViewBag.Sayi==1?"myBtn":null)" asp-action="create">Create</a></h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>PhotoURL</th>
+
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>PhotoURL</th>
+
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@Html.Raw(@item.Description)</td>
+                            <td>
+                                <img width="100" src="@item.PhotoURL" />
+                            </td>
+
+                            <td>
+
+                                <a href="/admin/principle/edit/@item.ID" class="btn btn-warning">Edit</a>
+                                <a href="/admin/principle/detail/@item.ID" class="btn btn-warning">Detail</a>
+                                <a href="/admin/principle/delete/@item.ID" class="btn btn-warning">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+            var button = document.getElementById("myBtn")
+            button.addEventListener("click",function(e){
+            e.preventDefault()
+            e.stopPropagation()
+            Swal.fire( 
+      'The Internet?',
+      'That thing is still around?',
+      'question'
+    )
+            })
+</script>
+}                    

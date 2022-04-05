@@ -1,0 +1,443 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- banner-start -->
+<section>
+    <div class="w-100 float-left banner-con text-xl-left text-lg-left text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-xl-0 order-lg-0 order-2">
+                    <div class="banner-left-con">
+                        <figure class="mb-0 left-curve-img wow slideInLeft">
+                            <img src="~/assets/image/small-left-curve-img.png" alt="" class="img-fluid">
+                        </figure>
+                        <figure class="mb-0">
+                            <img src="@Model.Introduction.PhotoURL">
+                        </figure>
+                        <figure class="mb-0 right-curve-img wow slideInRight">
+                            <img src="~/assets/image/small-right-curve-img.png" alt="" class="img-fluid">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner-right-content text-white">
+                        <h5>@Html.Raw(@Model.Introduction.Heading)</h5>
+                        <h1>
+                            @Html.Raw(@Model.Introduction.Description)
+                        </h1>
+                        <p class="text-white col-lg-10 col-md-9 ml-xl-0 mr-xl-0 ml-lg-0 mr-lg-0 ml-auto mr-auto pl-0 pr-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="#contact-form" class="appointment-btn ">Make Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+      </div>
+      </div>
+<!-- header-and-banner-section -->
+<!-- feature-box -->
+<section>
+    <div class="w-100 float-left feature-box-con text-center">
+        <div class="container">
+            <div class="row bg-white">
+                @foreach (var item in Model.Services)
+                {
+                    <div class="col-lg-3 col-md-3 col-sm-6  pl-0 pr-0">
+                        <div class="feature-box-item ">
+                            <figure>
+                                <img src="~/assets/image/feature-box-icon1.png" alt="feature-box-icon" class="img-fluid">
+                            </figure>
+                            <h5>@item.Name</h5>
+                            <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipi.</p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- feature-box -->
+<!-- quality-system-section -->
+<section>
+    <div class="w-100 float-left quality-system-con">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 d-flex align-items-center">
+                    <div class="quality-system-left-con">
+                        <h2>
+                            @Model.QualitySystem.Title
+                        </h2>
+                        <p>@Html.Raw(@Model.QualitySystem.Description)</p>
+                        <div class="quality-system-list">
+                            @Html.Raw(@Model.QualitySystem.Service)
+                        </div>
+
+                        <a href="#contact-form" class="appointment-btn">Make Appointment</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="quality-system-right-con position-relative text-center">
+                        <figure class="mb-0 left-curve-img wow slideInLeft">
+                            <img src="~/assets/image/small-left-curve-img.png" alt="" class="img-fluid">
+                        </figure>
+                        <figure class="mb-0">
+                            <img src="@Model.QualitySystem.PhotoURL" alt="quality-system-img" class="img-fluid human-img">
+                        </figure>
+                        <figure class="mb-0 right-curve-img wow slideInRight">
+                            <img src="~/assets/image/small-right-curve-img.png" alt="" class="img-fluid">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- quality-system-section -->
+<!-- offer-section -->
+<section>
+    <div class="w-100 float-left offer-con">
+        <div class="container">
+            <div class="offer-inner-con banner-overlay-img">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12 order-xl-0 order-lg-0 order-md-0 order-2">
+                        <div class="offer-left-con position-relative overlay-img">
+                            <figure class="mb-0">
+                                <img src="@Model.Discount.PhotoURL" alt="offer-section-img" class="img-fluid">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="offer-right-con overlay-img">
+                            <h2 class="text-white">
+                                @Model.Discount.Title
+                            </h2>
+                            <a href="contact.html" class="shope-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-note">
+                    <h4 class="text-white mb-0">@Model.Discount.DiscountOFF</span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- offer-section -->
+<!-- fun-facts-section-->
+<section>
+    <div class="w-100 float-left fun-facts-con">
+        <div class="container">
+            <div class="row text-xl-left text-lg-left text-center">
+                <div class="col-lg-6">
+                    <div class="fun-facts-heading ">
+                        <h2>
+                            A Healing Touch to Heal
+                            you Completely.
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="fun-facts-content">
+                        <p class=" mb-0">Seram ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt aenean leo ligula, porttitor eu consequat vitae eleifend ac enim aliqu am </p>
+                    </div>
+                </div>
+            </div>
+            <div class="fun-facts-box-con text-sm-left text-center">
+                <div class="row bg-white">
+                    @foreach (var item in @Model.Abouts)
+                    {
+                        <div class="col-lg-3 col-md-6 col-6 pl-0 pr-0 border-right-0">
+                            <div class="fun-facts-box-item d-sm-flex align-items-sm-center">
+                                <figure class="mb-0 d-inline-block">
+                                    <img src="@item.PhotoURL" alt="fun-facts-icon1" class="img-fluid">
+                                </figure>
+                                <div class="fun-facts-item-content d-inline-block">
+                                    <div class="position-relative fun-facts-item-title d-inline-block">
+                                        <h2 class="count">@item.Count</h2>
+                                        <span>+</span>
+                                    </div>
+                                    <p class="mb-0">@Html.Raw(@item.Text)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- fun-facts-section-->
+<!-- form-section -->
+<section>
+    <div class="w-100 float-left form-main-con" id="contact-form">
+        <div class="container">
+            <div class="text-center">
+                <h2>Book An Appointment</h2>
+                <p>
+                    Seram ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt aenean<br>
+                    leo ligula porttitor eu consequat vitae eleifend tac.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 order-xl-0 order-lg-0 order-2">
+                    <div class="form-left-con position-relative text-center">
+                        <figure class="mb-0 left-curve-img wow slideInLeft">
+                            <img src="~/assets/image/small-left-curve-img.png" alt="" class="img-fluid">
+                        </figure>
+                        <figure class="mb-0">
+                            <img src="~/assets/image/form-left-img.png" alt="form-left-img" class="img-fluid human-img form-left-img">
+                        </figure>
+                        <figure class="mb-0 right-curve-img wow slideInRight">
+                            <img src="~/assets/image/small-right-curve-img.png" alt="" class="img-fluid">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form method="post" class="contact-form">
+                        <div class="form-group">
+                           <label for="exampleFormControlSelect1" class="text-white">Department</label>
+                           <select class="form-control position-relative" id="exampleFormControlSelect1">
+                              <option>General Health Checkup</option>
+                              <option>General Health Checkup</option>
+                              <option>General Health Checkup</option>
+                              <option>General Health Checkup</option>
+                              <option>General Health Checkup</option>
+                           </select>
+                           <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group">    
+                                 <input type="text" class="form-control" placeholder="Name:" asp-for="Appointment.Name" id="name"> 
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group">
+                                 <input type="email" asp-for="Appointment.Email" class="form-control" placeholder="Email:">
+                                 <small id="emailHelp" class="form-text text-muted"></small>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group">    
+                                 <input type="time" asp-for="Appointment.Time" class="form-control"> 
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group">
+                                 <select class="form-control position-relative">
+                                    <option>Choose Doctor </option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                 </select>
+                                 <i class="fas fa-angle-down down-icon"></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="textarea form-group W-100">    
+                                 <textarea class="form-control "  placeholder="Message:" rows="3" asp-for="Appointment.Message" id="comments"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                        <button type="submit" class="btn  appointment-btn">Make Appointment</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- form-section -->
+<!-- slider-section -->
+<section>
+    <div class="w-100 float-left slider-con text-lg-left text-center">
+        <div class="container">
+            <div class="slider-inner-con banner-overlay-img">
+                <div class="row overlay-img">
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <div class="slider-left-con">
+                            <h2 class="text-white">
+                                What Our <br>
+                                Patients Say About
+                                Our Services
+                            </h2>
+                            <p class="mb-0">
+                                4.8 Overall Rating, Based<br>
+                                on 2500+ Reviews.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                @foreach (var item in @Model.PatientsSays)
+                                {
+                                    <div class="carousel-item active">
+                                        <div class="auther-con w-100 d-inline-block">
+                                            <figure class="mb-0 d-inline-block">
+                                                <img src="@item.PatientPhoto" alt="auther-img" class="img-fluid">
+                                            </figure>
+                                            <div class="auther-title d-inline-block">
+                                                <h4 class="text-white">@item.PatientName</h4>
+                                                <p class="mb-0">@item.Patient Patient</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-white mb-0">@Html.Raw(@item.Description)</p>
+                                    </div>
+                                }
+
+
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                                <i class="fas fa-arrow-left"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                                <i class="fas fa-arrow-right"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- slider-section -->
+<!-- blog section -->
+<section>
+    <div class="w-100 float-left blog-con">
+        <div class="container">
+            <div class="text-center">
+                <h2>Our Latest News</h2>
+                <p>
+                    Seram ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt aenean<br>
+                    leo ligula porttitor eu consequat vitae eleifend tac.
+                </p>
+            </div>
+            <div class="row">
+                @foreach (var item in @Model.LastNews)
+                {
+                    <div class="col-lg-4 col-md-4">
+                        <a href="single-post.html">
+                            <div class="blog-item">
+                                <figure class="mb-0">
+                                    <img src="@item.PhotoURL" alt="blog-img" class="img-fluid">
+                                </figure>
+                                <div class="blog-item-content">
+                                    <div class="blog-item-auther-name">
+                                        <span>@item.Name</span>
+                                        <span>Dec 1, 2022</span>
+                                    </div>
+                                    <h4>
+                                        @item.Title
+                                    </h4>
+                                    <p class="mb-0">
+                                        @Html.Raw(@item.Description)
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog section -->
+<!-- mobile-app-section -->
+<section>
+    <div class="w-100 float-left mobile-app-con">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 order-xl-0 order-lg-0 order-md-0 order-2">
+                    <div class="mobile-app-left-con position-relative text-center">
+                        <figure class="mb-0">
+                            <img src="@Model.MobileApp.PhotoURL" alt="mobile-img" class="img-fluid human-img">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-xl-left text-lg-left text-md-left text-center">
+                    <div class="mobile-app-right-con">
+                        <h2>
+                            @Model.MobileApp.Title
+                        </h2>
+                        @Html.Raw(@Model.MobileApp.Description)
+                        <div class="mobile-app-btn">
+                            <a href="https://play.google.com/store/apps" class="appointment-btn"><i class="fab fa-google-play text-white"></i>Goolge Play</a>
+                            <a href="https://www.apple.com/app-store/" class="appointment-btn"><i class="fab fa-app-store text-white"></i>App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- mobile-app-section -->
+<!-- news-letter-section -->
+<section>
+    <div class="w-100 float-left news-letter-con">
+        <div class="container">
+            <div class="news-letter-inner-con banner-overlay-img">
+                <div class="row overlay-img align-items-center">
+                    <div class="col-lg-6 col-md-5">
+                        <div class="news-letter-title">
+                            <h2 class="text-white mb-0">
+                                Subscribe to our
+                                Newsletter
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-7">
+                        <div class="news-letter-input-con position-relative">
+                            <form method="post">
+                                <div class="news-letter-input-feild">
+                                    <input type="email" asp-for="SendEmail.Email" placeholder="Enter Your Email:" class="w-100">
+
+                                </div>
+                                <button>
+                                    <i class="far fa-envelope"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- news-letter-section -->
+<!-- logo-section -->
+<div class="w-100 float-left logo-con">
+    <div class="container">
+        <div class="logo-inner-con">
+            <div class="row">
+                @foreach (var item in @Model.Companies)
+                {
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-4">
+                        <figure class="mb-0">
+                            <img src="@item.PhotoURL" class="img-fluid">
+                        </figure>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- logo-section -->

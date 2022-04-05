@@ -1,0 +1,56 @@
+﻿@model EditVM
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card p-3">
+                <div class="tab-content" id="myTabContent">
+                    <p>Title</p>
+                    <input class="form-control mb-2" name="Title" value="@Model.Discount.Title" />
+                    <p>DiscountOFF</p>
+                    <input class="form-control mb-2" name="DiscountOFF" value="@Model.Discount.DiscountOFF" />
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <p>Photo</p>
+                    <img class="img-fluid" src="@Model.Discount.PhotoURL" />
+                    <input type="hidden" value="@Model.Discount.PhotoURL" name="OldPhoto" type="@Model.Discount.PhotoURL"/>
+                </div>
+            </div>
+            <div class="card p-3 mt-3">
+                <input type="file" name="Image" />
+            </div>
+            <div class="card p-3 mt-3">
+                <input class="btn btn-primary btn-sm" type="submit" value="Save" />
+            </div>
+            <div class="card p-3 mt-3">
+                <a class="btn btn-primary btn-sm" href="/admin/discount">Back to List</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</form>
+
+
+<script>
+    ClassicEditor
+            .create( document.querySelector('#editor-1') )
+</script>
+
+

@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<p>ID</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="ID" value="@Model.ID" />
+<p>Patient Name</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="PatientName" value="@Model.PatientName" />
+<p>Patient</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Patient" value="@Model.Patient" />
+<p>Description</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Description" value="@Model.Description" />
+<p>Patient Photo</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="PatientPhoto" value="@Model.PatientPhoto" />
+
+
+
+<a asp-action="Delete" asp-route-id="@Model.ID">Delete</a>

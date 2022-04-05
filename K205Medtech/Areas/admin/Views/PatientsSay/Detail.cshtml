@@ -1,0 +1,50 @@
+﻿@model PatientsSay
+
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<form enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card p-3">
+                <div class="tab-content" id="myTabContent">
+                    <p>ID</p>
+                    <input style="pointer-events: none;" class="form-control mb-2" name="ID" value="@Model.ID" />
+                    <p>Patient Name</p>
+                    <input style="pointer-events: none;" class="form-control mb-2" name="PatientName" value="@Model.PatientName" />
+                    <p>Patient</p>
+                    <input style="pointer-events: none;" class="form-control mb-2" name="Patient" value="@Html.Raw(Model.Patient)" />
+                    <p>Description</p>
+                    <input style="pointer-events: none;" class="form-control mb-2" name="Description" value="@Html.Raw(Model.Description)" />
+                    <p>Created Date</p>
+                    <input style="pointer-events: none;" class="form-control mb-2" name="CreatedDate" value="@Model.CreatedDate" />
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <p>Patient Photo</p>
+                    <img class="img-fluid" src="@Model.PatientPhoto" />
+                </div>
+            </div>
+            <div class="card p-3 mt-3">
+                <a class="btn btn-primary btn-sm" href="/admin/patientssay/edit">Edit</a>
+            </div>
+            <div class="card p-3 mt-3">
+                <a class="btn btn-primary btn-sm" href="/admin/patientssay">Back to List</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</form>

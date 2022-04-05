@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+
+<p>Photo</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Icon" value="@Model.PhotoURL" />
+
+
+
+<a asp-action="Delete" asp-route-id="@Model.ID">Delete</a>

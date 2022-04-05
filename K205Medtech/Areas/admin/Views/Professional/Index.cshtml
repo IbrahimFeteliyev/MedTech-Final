@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Professional>
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary"><a id="@(ViewBag.Sayi==1?"myBtn":null)" asp-action="create">Create</a></h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Profession</th>
+                        <th>Description</th>
+                        <th>Facebook</th>
+                        <th>Twitter</th>
+                        <th>LinkedIn</th>
+                        <th>Pinterest</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>PhotoURL</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Profession</th>
+                        <th>Description</th>
+                        <th>Facebook</th>
+                        <th>Twitter</th>
+                        <th>LinkedIn</th>
+                        <th>Pinterest</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>PhotoURL</th>
+
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Profession</td>
+                            <td>@Html.Raw(@item.Description)</td>
+                            <td>@item.Facebook</td>
+                            <td>@item.Twitter</td>
+                            <td>@item.LinkedIn</td>
+                            <td>@item.Pinterest</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+
+                            <td>
+                                <img width="100" src="@item.PhotoURL" />
+                            </td>
+
+
+                            <td>
+
+                                <a href="/admin/professional/edit/@item.ID" class="btn btn-warning">Edit</a>
+                                <a href="/admin/professional/detail/@item.ID" class="btn btn-warning">Detail</a>
+                                <a href="/admin/professional/delete/@item.ID" class="btn btn-warning">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+            var button = document.getElementById("myBtn")
+            button.addEventListener("click",function(e){
+            e.preventDefault()
+            e.stopPropagation()
+            Swal.fire( 
+      'The Internet?',
+      'That thing is still around?',
+      'question'
+    )
+            })
+</script>
+}                    

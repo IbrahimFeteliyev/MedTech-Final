@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<p>ID</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="ID" value="@Model.ID" />
+<p>Name</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Name" value="@Model.Title" />
+<p>Profession</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Profession" value="@Model.Title" />
+<p>Description</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Description" value="@Model.Description" />
+<p>Facebook Link</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Facebook" value="@Model.Facebook" />
+<p>Twitter Link</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Twitter" value="@Model.Twitter" />
+<p>LinkedIn Link</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="LinkedIn" value="@Model.LinkedIn" />
+<p>Pinterest Link</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Pinterest" value="@Model.Pinterest" />
+<p>Email</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Email" value="@Model.Email" />
+<p>Phone</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Phone" value="@Model.Phone" />
+<p>Photo</p>
+<input style="pointer-events: none;" class="form-control mb-2" name="Photo" value="@Model.PhotoURL" />
+
+
+
+<a asp-action="Delete" asp-route-id="@Model.ID">Delete</a>

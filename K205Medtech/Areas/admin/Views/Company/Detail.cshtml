@@ -1,0 +1,44 @@
+﻿@model Company
+
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<form enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card p-3">
+                <div class="tab-content" id="myTabContent">
+                    <p>ID</p>
+                    <input style="pointer-events: none;" class="form-control mb-2" name="ID" value="@Model.ID" />
+                    <p>Created Date</p>
+                    <input style="pointer-events: none;" class="form-control mb-2" name="Icon" value="@Model.CreatedDate" />
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <p>Photo</p>
+                    <img class="img-fluid" src="@Model.PhotoURL" />
+                </div>
+            </div>
+            <div class="card p-3 mt-3">
+                <a class="btn btn-primary btn-sm" href="/admin/company/edit">Edit</a>
+            </div>
+            <div class="card p-3 mt-3">
+                <a class="btn btn-primary btn-sm" href="/admin/company">Back to List</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</form>

@@ -1,0 +1,46 @@
+﻿@model EditVM
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <p>Photo</p>
+                    <img class="img-fluid" src="@Model.Company.PhotoURL" />
+                    <input type="hidden" value="@Model.Company.PhotoURL" name="OldPhoto" type="@Model.Company.PhotoURL" />
+                </div>
+            </div>
+            <div class="card p-3 mt-3">
+                <input type="file" name="Image" />
+            </div>
+            <div class="card p-3 mt-3">
+                <input class="btn btn-primary btn-sm" type="submit" value="Save" />
+            </div>
+            <div class="card p-3 mt-3">
+                <a class="btn btn-primary btn-sm" href="/admin/company">Back to List</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</form>
+
+
+<script>
+    ClassicEditor
+            .create( document.querySelector('#editor-1') )
+</script>
+
+
